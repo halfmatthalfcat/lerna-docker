@@ -1,0 +1,27 @@
+{
+  "name": "@halfmatthalfcat/lerna-docker",
+  "version": "1.0.1",
+  "description": "Streamline building Docker containers from lerna monorepo projects.",
+  "main": "./index.js",
+  "bin": {
+    "lerna-docker": "./bin.js"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": "git@github.com:halfmatthalfcat/lerna-docker.git",
+  "author": "halfmatthalfcat <mjo2089@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@types/dockerode": "^3.3.14",
+    "@types/node": "^18.11.18",
+    "@types/semver": "^7.3.13",
+    "@types/tar-fs": "^2.0.1",
+    "dockerode": "^3.3.4",
+    "ignore": "^5.2.4",
+    "isomorphic-git": "^1.21.0",
+    "semver": "^7.3.8",
+    "tar-fs": "^2.1.1",
+    "ts-node": "^10.9.1"
+  }
+}

@@ -59,7 +59,7 @@ export const buildContainers = async (version: string) => {
     );
     const buildStream = await docker.buildImage(pack, {
       t: `${fullImagePrefix}/${project}:${version}`,
-      dockerfile: `docker/${project}.Dockerfile`,
+      dockerfile: join(process.cwd(), "docker", `${project}.Dockerfile`),
       buildargs: dockerBuildArgs(),
       labels: dockerLabels(),
     });

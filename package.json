@@ -1,6 +1,6 @@
 {
   "name": "@halfmatthalfcat/lerna-docker",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Streamline building Docker containers from lerna monorepo projects.",
   "main": "./index.js",
   "bin": {

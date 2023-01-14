@@ -1,0 +1,6 @@
+name: lerna-docker
+author: Matt Oliver <mjo2089@gmail.com>
+description: Streamline building Docker containers from lerna monorepo projects.
+runs:
+  using: 'node16'
+  main: 'index.js'

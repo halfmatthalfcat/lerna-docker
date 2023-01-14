@@ -7,7 +7,8 @@
     "lerna-docker": "./bin.js"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "prepublishOnly": "tsc"
   },
   "repository": "git@github.com:halfmatthalfcat/lerna-docker.git",
   "author": "halfmatthalfcat <mjo2089@gmail.com>",

@@ -4,13 +4,16 @@ export const versionPrefix = (() => {
     console.log(`Version prefix required.`);
     process.exit(1);
   } else {
-    return prefix;
+    return process.env[prefix];
   }
 })();
 
-export const versionPrerelease = Object
-  .keys(process.env)
-  .find(key => /^(?:INPUT_)?VERSION_PRERELEASE$/.test(key));
+export const versionPrerelease = (() => {
+  const prerelease = Object.keys(process.env).find(key => /^(?:INPUT_)?VERSION_PRERELEASE$/.test(key));
+  if (prerelease) {
+    return process.env[prerelease];
+  }
+})();
 
 export const gitEmail = (() => {
   const email = Object.keys(process.env).find(key => /^(?:INPUT_)?GIT_EMAIL$/.test(key));
@@ -18,7 +21,7 @@ export const gitEmail = (() => {
     console.log(`Git email required.`);
     process.exit(1);
   } else {
-    return email;
+    return process.env[email];
   }
 })();
 
@@ -28,7 +31,7 @@ export const gitUsername = (() => {
     console.log(`Git username required.`);
     process.exit(1);
   } else {
-    return username;
+    return process.env[username];
   }
 })();
 
@@ -68,18 +71,27 @@ export const dockerRegistry = (() => {
     console.log(`Docker registry url required.`);
     process.exit(1);
   } else {
-    return registry;
+    return process.env[registry];
   }
 })();
 
-export const dockerImagePrefix = Object
-  .keys(process.env)
-  .find(key => /^(?:INPUT_)?DOCKER_IMAGE_PREFIX$/.test(key));
+export const dockerImagePrefix = (() => {
+  const imagePrefix = Object.keys(process.env).find(key => /^(?:INPUT_)?DOCKER_IMAGE_PREFIX$/.test(key));
+  if (imagePrefix) {
+    return process.env[imagePrefix];
+  }
+})();
 
-export const dockerRegistryUsername = Object
-  .keys(process.env)
-  .find(key => /^(?:INPUT_)?DOCKER_REGISTRY_USERNAME$/.test(key));
+export const dockerRegistryUsername = (() => {
+  const registryUsername = Object.keys(process.env).find(key => /^(?:INPUT_)?DOCKER_REGISTRY_USERNAME$/.test(key));
+  if (registryUsername) {
+    return process.env[registryUsername];
+  }
+})();
 
-export const dockerRegistryPassword = Object
-  .keys(process.env)
-  .find(key => /^(?:INPUT_)?DOCKER_REGISTRY_PASSWORD$/.test(key));
+export const dockerRegistryPassword = (() => {
+  const registryPassword = Object.keys(process.env).find(key => /^(?:INPUT_)?DOCKER_REGISTRY_PASSWORD$/.test(key));
+  if (registryPassword) {
+    return process.env[registryPassword];
+  }
+})();

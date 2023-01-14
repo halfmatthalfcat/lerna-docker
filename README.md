@@ -41,7 +41,7 @@ jobs:
       # all your usual build steps
       - name: Dockerize
         uses: ./node_modules/@halfmatthalfcat/lerna-docker
-        with:
+        env:
           # any/all the configuration options
 ```
 
